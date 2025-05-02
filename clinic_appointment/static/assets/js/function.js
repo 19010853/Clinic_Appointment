@@ -34,26 +34,26 @@
     !(function (n, e, i, a) {
         (n.navigation = function (t, s) {
             var o = {
-                    responsive: !0,
-                    mobileBreakpoint: 992,
-                    showDuration: 300,
-                    hideDuration: 300,
-                    showDelayDuration: 0,
-                    hideDelayDuration: 0,
-                    submenuTrigger: "hover",
-                    effect: "fade",
-                    submenuIndicator: !0,
-                    hideSubWhenGoOut: !0,
-                    visibleSubmenusOnMobile: !1,
-                    fixed: !1,
-                    overlay: !0,
-                    overlayColor: "rgba(0, 0, 0, 0.5)",
-                    hidden: !1,
-                    offCanvasSide: "left",
-                    onInit: function () {},
-                    onShowOffCanvas: function () {},
-                    onHideOffCanvas: function () {},
-                },
+                responsive: !0,
+                mobileBreakpoint: 992,
+                showDuration: 300,
+                hideDuration: 300,
+                showDelayDuration: 0,
+                hideDelayDuration: 0,
+                submenuTrigger: "hover",
+                effect: "fade",
+                submenuIndicator: !0,
+                hideSubWhenGoOut: !0,
+                visibleSubmenusOnMobile: !1,
+                fixed: !1,
+                overlay: !0,
+                overlayColor: "rgba(0, 0, 0, 0.5)",
+                hidden: !1,
+                offCanvasSide: "left",
+                onInit: function () { },
+                onShowOffCanvas: function () { },
+                onHideOffCanvas: function () { },
+            },
                 u = this,
                 r = Number.MAX_VALUE,
                 d = 1,
@@ -115,25 +115,25 @@
                         n(e).removeClass("nav-submenu-open").find(".nav-submenu-open").removeClass("nav-submenu-open");
                 });
             var h = function () {
-                    n("body").addClass("no-scroll"),
-                        u.settings.overlay &&
-                            (n(t).append("<div class='nav-overlay-panel'></div>"),
-                            n(t)
-                                .find(".nav-overlay-panel")
-                                .css("background-color", u.settings.overlayColor)
-                                .fadeIn(300)
-                                .on("click touchstart", function (n) {
-                                    u.hideOffcanvas();
-                                }));
-                },
+                n("body").addClass("no-scroll"),
+                    u.settings.overlay &&
+                    (n(t).append("<div class='nav-overlay-panel'></div>"),
+                        n(t)
+                            .find(".nav-overlay-panel")
+                            .css("background-color", u.settings.overlayColor)
+                            .fadeIn(300)
+                            .on("click touchstart", function (n) {
+                                u.hideOffcanvas();
+                            }));
+            },
                 p = function () {
                     n("body").removeClass("no-scroll"),
                         u.settings.overlay &&
-                            n(t)
-                                .find(".nav-overlay-panel")
-                                .fadeOut(400, function () {
-                                    n(this).remove();
-                                });
+                        n(t)
+                            .find(".nav-overlay-panel")
+                            .fadeOut(400, function () {
+                                n(this).remove();
+                            });
                 };
             (u.showOffcanvas = function () {
                 h(), "left" == u.settings.offCanvasSide ? n(t).find(".nav-menus-wrapper").css("transition-property", "left").addClass("nav-menus-wrapper-open") : n(t).find(".nav-menus-wrapper").css("transition-property", "right").addClass("nav-menus-wrapper-open");
@@ -154,13 +154,13 @@
                     "none" == n(t).find(".nav-search").find("form").css("display") ? (n(t).find(".nav-search").find("form").slideDown(), n(t).find(".nav-submenu").fadeOut(200)) : n(t).find(".nav-search").find("form").slideUp();
                 });
             var m = function () {
-                    u.settings.responsive
-                        ? (g() <= u.settings.mobileBreakpoint && r > u.settings.mobileBreakpoint && (n(t).addClass("navigation-portrait").removeClass("navigation-landscape"), D()),
-                          g() > u.settings.mobileBreakpoint && d <= u.settings.mobileBreakpoint && (n(t).addClass("navigation-landscape").removeClass("navigation-portrait"), k(), p(), u.hideOffcanvas()),
-                          (r = g()),
-                          (d = g()))
-                        : k();
-                },
+                u.settings.responsive
+                    ? (g() <= u.settings.mobileBreakpoint && r > u.settings.mobileBreakpoint && (n(t).addClass("navigation-portrait").removeClass("navigation-landscape"), D()),
+                        g() > u.settings.mobileBreakpoint && d <= u.settings.mobileBreakpoint && (n(t).addClass("navigation-landscape").removeClass("navigation-portrait"), k(), p(), u.hideOffcanvas()),
+                        (r = g()),
+                        (d = g()))
+                    : k();
+            },
                 b = function () {
                     n("body").on("click.body touchstart.body", function (e) {
                         0 === n(e.target).closest(".navigation").length && (n(t).find(".nav-submenu").fadeOut(), n(t).find(".nav-submenu-open").removeClass("nav-submenu-open"), n(t).find(".nav-search").find("form").slideUp());
@@ -199,28 +199,28 @@
                         n(t).find(".nav-submenu").hide(0),
                         navigator.userAgent.match(/Mobi/i) || navigator.maxTouchPoints > 0 || "click" == u.settings.submenuTrigger
                             ? n(t)
-                                  .find(".nav-menu, .nav-dropdown")
-                                  .children("li")
-                                  .children("a")
-                                  .on(f, function (i) {
-                                      if ((u.hideSubmenu(n(this).parent("li").siblings("li"), u.settings.effect), n(this).closest(".nav-menu").siblings(".nav-menu").find(".nav-submenu").fadeOut(u.settings.hideDuration), n(this).siblings(".nav-submenu").length > 0)) {
-                                          if ((i.stopPropagation(), i.preventDefault(), "none" == n(this).siblings(".nav-submenu").css("display"))) return u.showSubmenu(n(this).parent("li"), u.settings.effect), C(), !1;
-                                          if ((u.hideSubmenu(n(this).parent("li"), u.settings.effect), "_blank" == n(this).attr("target") || "blank" == n(this).attr("target"))) e.open(n(this).attr("href"));
-                                          else {
-                                              if ("#" == n(this).attr("href") || "" == n(this).attr("href")) return !1;
-                                              e.location.href = n(this).attr("href");
-                                          }
-                                      }
-                                  })
+                                .find(".nav-menu, .nav-dropdown")
+                                .children("li")
+                                .children("a")
+                                .on(f, function (i) {
+                                    if ((u.hideSubmenu(n(this).parent("li").siblings("li"), u.settings.effect), n(this).closest(".nav-menu").siblings(".nav-menu").find(".nav-submenu").fadeOut(u.settings.hideDuration), n(this).siblings(".nav-submenu").length > 0)) {
+                                        if ((i.stopPropagation(), i.preventDefault(), "none" == n(this).siblings(".nav-submenu").css("display"))) return u.showSubmenu(n(this).parent("li"), u.settings.effect), C(), !1;
+                                        if ((u.hideSubmenu(n(this).parent("li"), u.settings.effect), "_blank" == n(this).attr("target") || "blank" == n(this).attr("target"))) e.open(n(this).attr("href"));
+                                        else {
+                                            if ("#" == n(this).attr("href") || "" == n(this).attr("href")) return !1;
+                                            e.location.href = n(this).attr("href");
+                                        }
+                                    }
+                                })
                             : n(t)
-                                  .find(".nav-menu")
-                                  .find("li")
-                                  .on(l, function () {
-                                      u.showSubmenu(this, u.settings.effect), C();
-                                  })
-                                  .on(c, function () {
-                                      u.hideSubmenu(this, u.settings.effect);
-                                  }),
+                                .find(".nav-menu")
+                                .find("li")
+                                .on(l, function () {
+                                    u.showSubmenu(this, u.settings.effect), C();
+                                })
+                                .on(c, function () {
+                                    u.hideSubmenu(this, u.settings.effect);
+                                }),
                         u.settings.hideSubWhenGoOut && b();
                 },
                 D = function () {
@@ -229,9 +229,9 @@
                         u.settings.visibleSubmenusOnMobile
                             ? n(t).find(".nav-submenu").show(0)
                             : (n(t).find(".nav-submenu").hide(0),
-                              n(t).find(".submenu-indicator").removeClass("submenu-indicator-up"),
-                              u.settings.submenuIndicator
-                                  ? n(t)
+                                n(t).find(".submenu-indicator").removeClass("submenu-indicator-up"),
+                                u.settings.submenuIndicator
+                                    ? n(t)
                                         .find(".submenu-indicator")
                                         .on(f, function (e) {
                                             return (
@@ -241,14 +241,14 @@
                                                 u.hideSubmenu(n(this).closest(".nav-menu").siblings(".nav-menu").children("li"), "slide"),
                                                 "none" == n(this).parent("a").siblings(".nav-submenu").css("display")
                                                     ? (n(this).addClass("submenu-indicator-up"),
-                                                      n(this).parent("a").parent("li").siblings("li").find(".submenu-indicator").removeClass("submenu-indicator-up"),
-                                                      n(this).closest(".nav-menu").siblings(".nav-menu").find(".submenu-indicator").removeClass("submenu-indicator-up"),
-                                                      u.showSubmenu(n(this).parent("a").parent("li"), "slide"),
-                                                      !1)
+                                                        n(this).parent("a").parent("li").siblings("li").find(".submenu-indicator").removeClass("submenu-indicator-up"),
+                                                        n(this).closest(".nav-menu").siblings(".nav-menu").find(".submenu-indicator").removeClass("submenu-indicator-up"),
+                                                        u.showSubmenu(n(this).parent("a").parent("li"), "slide"),
+                                                        !1)
                                                     : (n(this).parent("a").parent("li").find(".submenu-indicator").removeClass("submenu-indicator-up"), void u.hideSubmenu(n(this).parent("a").parent("li"), "slide"))
                                             );
                                         })
-                                  : k());
+                                    : k());
                 };
             (u.callback = function (n) {
                 s[n] !== a && s[n].call(t);
@@ -331,14 +331,26 @@
         placeholder: "Select Tour Types",
     });
 
-    $("body").on("click", ".toggle-password", function () {
-        $(this).toggleClass("fa-eye-slash");
-        var input = $("#password-field");
-        if (input.attr("type") === "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
-        }
+    // Password visibility toggle
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleButtons = document.querySelectorAll('.toggle-password');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
     });
 
     (function () {
