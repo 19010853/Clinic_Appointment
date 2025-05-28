@@ -1,0 +1,32 @@
+Dear {{billing.appointment.patient.full_name}},
+
+Your appointment with Dr. {{billing.appointment.doctor.full_name}} has been successfully scheduled. We look forward to seeing you!
+
+Service and Issues:
+- Service: {{ billing.appointment.service.name }}
+- Issues: {{ billing.appointment.issues }}
+- Symptoms: {{ billing.appointment.symptoms }}
+
+Doctor Information:
+- Full Name: Dr. {{billing.appointment.doctor.full_name}}
+- Email: {{billing.appointment.doctor.user.email}}
+
+Appointment Details:
+- Date: {{billing.appointment.appointment_date}}
+- Status: {{billing.appointment.status}}
+- ID: {{billing.appointment.appointment_id}}
+
+Billing Information:
+- Billing ID: {{billing.billing_id}}
+- Price: ${{billing.sub_total}}
+- Status: {{billing.status}}
+
+Contact Information:
+- Phone: +84 123 456 789
+- Email: info@mkdental.com
+- Address: 123 Dental Street, City, Country
+
+Your health is our priority. We're committed to providing you with the best dental care.
+
+Best regards,
+MK Dental Clinic Team

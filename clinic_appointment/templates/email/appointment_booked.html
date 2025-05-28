@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #2c3e50;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .email-container {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .clinic-logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .success-icon {
+      color: #28a745;
+      font-size: 48px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #34495e;
+    }
+
+    .info-section {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .info-section h3 {
+      font-size: 20px;
+      color: #2c3e50;
+      margin-top: 0;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-section h3 i {
+      color: #3498db;
+    }
+
+    .info-section p {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-section p i {
+      color: #3498db;
+      width: 20px;
+    }
+
+    b {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-top: 15px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      text-align: center;
+      color: #7f8c8d;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .contact-info i {
+      color: #3498db;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="{% static 'assets/images/MK_Dental_Clinic.jpg' %}" alt="MK Dental Clinic" class="clinic-logo">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1>Appointment Confirmed!</h1>
+    </div>
+
+    <p>Dear <b>{{billing.appointment.patient.full_name}}</b>,</p>
+    <p>Your appointment with <b>Dr. {{billing.appointment.doctor.full_name}}</b> has been successfully scheduled. We
+      look forward to seeing you!</p>
+
+    <div class="info-section">
+      <h3><i class="fas fa-tooth"></i> Service and Issues</h3>
+      <p><i class="fas fa-stethoscope"></i> <b>Service:</b> {{ billing.appointment.service.name }}</p>
+      <p><i class="fas fa-clipboard-list"></i> <b>Issues:</b> {{ billing.appointment.issues }}</p>
+      <p><i class="fas fa-notes-medical"></i> <b>Symptoms:</b> {{ billing.appointment.symptoms }}</p>
+    </div>
+
+    <div class="info-section">
+      <h3><i class="fas fa-user-md"></i> Doctor Information</h3>
+      <p><i class="fas fa-user"></i> <b>Full Name:</b> Dr. {{billing.appointment.doctor.full_name}}</p>
+      <p><i class="fas fa-envelope"></i> <b>Email:</b> {{billing.appointment.doctor.user.email}}</p>
+    </div>
+
+    <div class="info-section">
+      <h3><i class="fas fa-calendar-check"></i> Appointment Details</h3>
+      <p><i class="fas fa-clock"></i> <b>Date:</b> {{billing.appointment.appointment_date}}</p>
+      <p><i class="fas fa-info-circle"></i> <b>Status:</b> {{billing.appointment.status}}</p>
+      <p><i class="fas fa-hashtag"></i> <b>ID:</b> {{billing.appointment.appointment_id}}</p>
+    </div>
+
+    <div class="info-section">
+      <h3><i class="fas fa-file-invoice-dollar"></i> Billing Information</h3>
+      <p><i class="fas fa-receipt"></i> <b>Billing ID:</b> {{billing.billing_id}}</p>
+      <p><i class="fas fa-dollar-sign"></i> <b>Price:</b> ${{billing.sub_total}}</p>
+      <p><i class="fas fa-check-double"></i> <b>Status:</b> {{billing.status}}</p>
+    </div>
+
+    <div class="footer">
+      <p class="footer-text">
+        <i class="fas fa-heart"></i> Your health is our priority. We're committed to providing you with the best dental
+        care.
+      </p>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> Contact us: +84 123 456 789</p>
+        <p><i class="fas fa-envelope"></i> Email: info@mkdental.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Dental Street, City, Country</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

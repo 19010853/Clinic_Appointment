@@ -1,0 +1,142 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">About Our Clinic</h1>
+                <p class="lead text-muted mb-4">
+                    Providing exceptional healthcare services with compassion and expertise since 2010.
+                </p>
+                <div class="d-flex gap-3">
+                    <div class="text-center">
+                        <h3 class="fw-bold text-primary">10+</h3>
+                        <p class="text-muted">Years Experience</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="fw-bold text-primary">50+</h3>
+                        <p class="text-muted">Expert Doctors</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="fw-bold text-primary">10k+</h3>
+                        <p class="text-muted">Happy Patients</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'assets/images/clinic.jpg' %}" alt="Our Clinic" class="img-fluid rounded shadow-lg"
+                    style="height: 400px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-heartbeat text-primary fa-3x mb-3"></i>
+                        <h4 class="card-title">Our Mission</h4>
+                        <p class="card-text text-muted">
+                            To provide accessible, high-quality healthcare services that improve the lives of our
+                            patients and their families.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-eye text-primary fa-3x mb-3"></i>
+                        <h4 class="card-title">Our Vision</h4>
+                        <p class="card-text text-muted">
+                            To be the leading healthcare provider known for excellence in patient care, innovation, and
+                            community service.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-handshake text-primary fa-3x mb-3"></i>
+                        <h4 class="card-title">Our Values</h4>
+                        <p class="card-text text-muted">
+                            Compassion, integrity, excellence, and innovation guide everything we do in serving our
+                            patients.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-user-md text-primary fa-2x me-3"></i>
+                    <div>
+                        <h5 class="mb-1">Expert Doctors</h5>
+                        <p class="text-muted mb-0">Highly qualified medical professionals</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-clock text-primary fa-2x me-3"></i>
+                    <div>
+                        <h5 class="mb-1">24/7 Service</h5>
+                        <p class="text-muted mb-0">Round-the-clock medical assistance</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-hospital text-primary fa-2x me-3"></i>
+                    <div>
+                        <h5 class="mb-1">Modern Facility</h5>
+                        <p class="text-muted mb-0">State-of-the-art medical equipment</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-calendar-check text-primary fa-2x me-3"></i>
+                    <div>
+                        <h5 class="mb-1">Easy Booking</h5>
+                        <p class="text-muted mb-0">Simple online appointment system</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="fw-bold mb-4">Ready to Experience Better Healthcare?</h2>
+                <p class="lead text-muted mb-4">
+                    Book your appointment today and take the first step towards better health.
+                </p>
+                <a href="{% url 'base:services' %}" class="btn btn-primary btn-lg">
+                    Book Appointment <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

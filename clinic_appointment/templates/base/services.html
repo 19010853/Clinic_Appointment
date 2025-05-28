@@ -1,0 +1,38 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container mt-5">
+    <div class="py-4">
+        <h1 class="fw-bold">Our Services</h1>
+        <p class="text-secondary">Discover our comprehensive healthcare services designed to meet your needs.</p>
+    </div>
+    <div class="row">
+        {% for s in services %}
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 shadow">
+                <a href="{% url 'base:service_detail' s.id %}">
+                    <img src="{{ s.image.url }}" alt="{{ s.name }}" class="card-img-top"
+                        style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h4 class="mb-2">
+                        <a href="{% url 'base:service_detail' s.id %}" class="text-decoration-none">{{ s.name }}</a>
+                    </h4>
+                    <p>{{ s.description|truncatechars:100 }}</p>
+                    <div class="mt-2">
+                        <span class="fw-semibold">Doctors Available: {{ s.available_doctors.all.count }}</span>
+                        <div class="lh-1 mt-3">
+                            <span class="text-dark fw-bold fs-4">${{ s.cost }}</span>
+                        </div>
+                        <a href="{% url 'base:service_detail' s.id %}" class="btn btn-primary mt-3">
+                            Book Appointment <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

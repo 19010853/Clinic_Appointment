@@ -1,0 +1,33 @@
+Dear Dr. {{billing.appointment.doctor.full_name}},
+
+You have received a new appointment request from {{billing.appointment.patient.full_name}}. Please review the details below.
+
+Service and Issues:
+- Service: {{ billing.appointment.service.name }}
+- Issues: {{ billing.appointment.issues }}
+- Symptoms: {{ billing.appointment.symptoms }}
+
+Patient Information:
+- Full Name: {{billing.appointment.patient.full_name}}
+- Email: {{billing.appointment.patient.email}}
+- Mobile: {{billing.appointment.patient.mobile}}
+
+Appointment Details:
+- Date: {{billing.appointment.appointment_date}}
+- Status: {{billing.appointment.status}}
+- ID: {{billing.appointment.appointment_id}}
+
+Billing Information:
+- Billing ID: {{billing.billing_id}}
+- Price: ${{billing.sub_total}}
+- Status: {{billing.status}}
+
+Contact Information:
+- Phone: +84 123 456 789
+- Email: info@mkdental.com
+- Address: 123 Dental Street, City, Country
+
+Thank you for your dedication to providing excellent dental care.
+
+Best regards,
+MK Dental Clinic Team
