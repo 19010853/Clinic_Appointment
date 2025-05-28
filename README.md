@@ -4,6 +4,13 @@ A comprehensive clinic appointment system built with Django, designed to manage 
 
 ---
 
+## 📺 Video Demo
+
+Watch the demo video to see the system in action:
+[![Clinic Appointment System Demo](https://www.youtube.com/watch?v=CPC7GNNumNE)]
+
+---
+
 ## 📋 Features
 
 - **Authentication Management:**
